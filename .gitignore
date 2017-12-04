@@ -60,5 +60,6 @@ __build__/**
 # PKI #
 .idea/
 *.pem
+*.key
 *.pub
 *.csr
