@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "PKI": "node ./src/PKI/PKI.js",
+    "start": "node ./src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "encoding": "^0.1.12",
+    "ursa": "^0.9.4"
+  }
+}
