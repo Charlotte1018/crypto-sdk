@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "PKI": "node ./src/PKI/PKI.js",
     "start": "node ./src/app.js",
-    "sign":"node ./src/crypto/sign.js"
+    "sign":"node ./src/crypto/sign.js",
+    "csr":"openssl req -new -key client_private.key -out www.mydomain.com.csr"
   },
   "author": "",
   "license": "ISC",

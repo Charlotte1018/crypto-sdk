@@ -19,7 +19,7 @@ function generation(key) {
     var privatePem = ursa.createPrivateKey(key.toPrivatePem());
     var privateKey = privatePem.toPrivatePem('utf8');
 
-    fs.writeFile('client_private.pem', privateKey, 'utf8', function (error) {
+    fs.writeFile('client_private.key', privateKey, 'utf8', function (error) {
         if (error) {
             throw error;
         }
