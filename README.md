@@ -10,7 +10,12 @@
 > npm run PKI
 
 ```
-3. test algorithm
+3. CSR
+```
+> npm run csrgen
+
+```
+4. test algorithm
 
 ```
 > npm start

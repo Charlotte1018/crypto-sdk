@@ -10,15 +10,6 @@ let data='LOVE';
 let signer=ursa.createSigner('sha256');
 let verifier=ursa.createVerifier('sha256');
 
-// signer.update(data);
-// let sign=signer.sign(clientPrivate,'hex');
-// console.log(sign);
-
-// verifier.update(data);
-// let veri=verifier.verify(clientPublic,sign,'hex');
-
-// console.log(veri);
-
 /**
 * 使用私钥对文本进行签名
 * @param plain
