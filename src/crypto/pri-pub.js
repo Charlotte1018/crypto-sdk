@@ -6,7 +6,7 @@ let client = require('../PKI')
 
 let clientPrivate = client.client.pem;
 let clientPublic = client.client.pub;
-var clientModulusBit = 512;
+var clientModulusBit = 1024;
 var clientMaxBit = clientModulusBit / 8;
 var clientRealBit = clientMaxBit - 11;
 var padding = ursa.RSA_PKCS10_PADDING;
