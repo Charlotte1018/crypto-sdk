@@ -1,11 +1,11 @@
 let fs = require('fs');
 let ursa = require('ursa');
 let encoding = require('encoding');
-let client = require('../PKI')
+let client = require('../PKI');
 
 
-let clientPrivate = client.client.pem;
-let clientPublic = client.client.pub;
+let clientPrivate = client.pem;
+let clientPublic = client.pub;
 var clientModulusBit = 1024;
 var clientMaxBit = clientModulusBit / 8;
 var clientRealBit = clientMaxBit - 11;
@@ -21,7 +21,7 @@ var padding = ursa.RSA_PKCS10_PADDING;
 * */
 exports.priEncrypt = function (plain) {
     plain = plain || "hello world";
-    return encrypt(plain, clientPrivate, clientRealBit, padding);
+    return priencrypt(plain, clientPrivate, clientRealBit, padding);
 };
 
 
@@ -32,7 +32,7 @@ exports.priEncrypt = function (plain) {
 * */
 exports.pubDecrypt = function (cipher) {
     cipher = cipher || "";
-    return decrypt(cipher, clientPublic, clientMaxBit, padding);
+    return pubdecrypt(cipher, clientPublic, clientMaxBit, padding);
 };
 
 
@@ -57,7 +57,7 @@ function bytes(text, coding) {
 * @param padding
 * @returns {[*]}
 * */
-function encrypt(plain, privateKey, realBit, padding) {
+function priencrypt(plain, privateKey, realBit, padding) {
     var start1 = 0;
     var end1 = realBit;
     var result1 = '';
@@ -82,7 +82,7 @@ function encrypt(plain, privateKey, realBit, padding) {
 * @param padding
 * @returns {[*]}
 * */
-function decrypt(cipher, publicKey, maxBit, padding) {
+function pubdecrypt(cipher, publicKey, maxBit, padding) {
     var start2 = 0;
     var end2 = maxBit;
     var result2 = '';

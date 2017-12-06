@@ -1,15 +1,29 @@
-let pri_pub =require('./crypto/pri-pub');
-let pub_pri =require('./crypto/pub-pri');
-let sign_verify=require('./crypto/sign');
+// let pri_pub =require('./crypto/pri-pub');
+// let pub_pri =require('./crypto/pub-pri');
+// let sign_verify=require('./crypto/sign');
+
+// let plain='LOVE';
+// let encrypts=pri_pub.priEncrypt(plain);
+// let decrypts=pri_pub.pubDecrypt(encrypts);
+// let encrypt=pub_pri.pubEncrypt(plain);
+// let decrypt=pub_pri.priDecrypt(encrypt);
+
+// let sign=sign_verify.sign(plain);
+// let verify=sign_verify.verify(plain,sign);
+
+let sdk=require('./sdk/sdk');
 
 let plain='LOVE';
-let encrypts=pri_pub.priEncrypt(plain);
-let decrypts=pri_pub.pubDecrypt(encrypts);
-let encrypt=pub_pri.pubEncrypt(plain);
-let decrypt=pub_pri.priDecrypt(encrypt);
+let encrypts=sdk.priEncrypt(plain);
+let decrypts=sdk.pubDecrypt(encrypts);
+let encrypt=sdk.pubEncrypt(plain);
+let decrypt=sdk.priDecrypt(encrypt);
 
-let sign=sign_verify.sign(plain);
-let verify=sign_verify.verify(plain,sign);
+let sign=sdk.sign(plain);
+let verify=sdk.verify(plain,sign);
+
+
+
 console.log('********************');
 console.log('---私钥加密公钥解密---');
 console.log('加密结果--',encrypts);
@@ -25,3 +39,17 @@ console.log('签名结果--',sign);
 console.log('验证结果--',verify);
 console.log('-------------------');
 console.log('********************');
+
+var domain = 'exampledomain.com';
+
+sdk.csrgen(domain, {
+	outputDir: 'src',
+	read: true,
+	country:'CN',
+	company: 'Example, Inc.',
+	email: 'joe@foobar.com'
+}, function (err, keys) {
+	console.log('CSR created!')
+	console.log('key: ' + keys.private);
+	console.log('csr: ' + keys.csr);
+});

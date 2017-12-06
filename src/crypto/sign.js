@@ -4,8 +4,8 @@ let encoding = require('encoding');
 let client = require('../PKI')
 
 
-let clientPrivate = client.client.pem;
-let clientPublic = client.client.pub;
+let clientPrivate = client.pem;
+let clientPublic = client.pub;
 let data='LOVE';
 let signer=ursa.createSigner('sha256');
 let verifier=ursa.createVerifier('sha256');

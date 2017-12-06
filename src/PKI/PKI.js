@@ -19,7 +19,7 @@ function generation(key) {
     var privatePem = ursa.createPrivateKey(key.toPrivatePem());
     var privateKey = privatePem.toPrivatePem('utf8');
 
-    fs.writeFile('src/csrgen/client_private.key', privateKey, 'utf8', function (error) {
+    fs.writeFile('src/client_private.key', privateKey, 'utf8', function (error) {
         if (error) {
             throw error;
         }
@@ -30,7 +30,7 @@ function generation(key) {
     var publicPem = ursa.createPublicKey(key.toPublicPem());
     var publicKey = publicPem.toPublicPem('utf8');
 
-    fs.writeFile('src/csrgen/client_public.pub', publicKey, 'utf8', function (error) {
+    fs.writeFile('src/client_public.pub', publicKey, 'utf8', function (error) {
         if (error) {
             throw error;
         }
