@@ -8,7 +8,10 @@ const modulusBit = 1024;
 var key = ursa.generatePrivateKey(modulusBit, 65537);
 let client = generation(key);
 
-
+exports.PKI=function(){
+    generation(key);
+    console.log('生产公私钥');
+}
 /**
 * 生成私钥,写入到文件中 client_private.pem
 * 生成公钥,写入到文件中 client_public.pub

@@ -12,7 +12,8 @@
 // let verify=sign_verify.verify(plain,sign);
 
 let sdk=require('./sdk/sdk');
-
+// let PKI=require('./PKI/PKI');
+// PKI.PKI();
 let plain='LOVE';
 let encrypts=sdk.priEncrypt(plain);
 let decrypts=sdk.pubDecrypt(encrypts);
@@ -21,7 +22,6 @@ let decrypt=sdk.priDecrypt(encrypt);
 
 let sign=sdk.sign(plain);
 let verify=sdk.verify(plain,sign);
-
 
 
 console.log('********************');
