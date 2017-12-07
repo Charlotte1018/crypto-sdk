@@ -11,7 +11,7 @@
 // let sign=sign_verify.sign(plain);
 // let verify=sign_verify.verify(plain,sign);
 
-let sdk=require('./sdk/sdk');
+let sdk=require('./src/sdk/sdk');
 // let PKI=require('./PKI/PKI');
 // PKI.PKI();
 let plain='LOVE';
@@ -40,10 +40,10 @@ console.log('验证结果--',verify);
 console.log('-------------------');
 console.log('********************');
 
-var domain = 'exampledomain.com';
+var domain = 'baidu.com';
 
 sdk.csrgen(domain, {
-	outputDir: 'src',
+	outputDir: __dirname,
 	read: true,
 	country:'CN',
 	company: 'Example, Inc.',

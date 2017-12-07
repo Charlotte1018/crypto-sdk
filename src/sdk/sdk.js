@@ -1,7 +1,13 @@
 let fs = require('fs');
 let ursa = require('ursa');
 let encoding = require('encoding');
-let client = require('../PKI');
+let client_private = fs.readFileSync('client_private.key');
+let client_public = fs.readFileSync('client_public.pub');
+
+let client = {
+    pub :ursa.createPublicKey(client_public),
+    pem :ursa.createPrivateKey(client_private)
+};
 
 
 let clientPrivate = client.pem;
@@ -214,7 +220,8 @@ exports.verify = function(plain,signature){
 
 
 
-//--------------------------------------------------------
+//----------------------生成csr文件----------------------------------
+
 
 var s = require('child_process').spawn;
 var _ = require('underscore');
