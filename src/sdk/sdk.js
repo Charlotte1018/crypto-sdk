@@ -204,7 +204,7 @@ function pridecrypt(cipher, privateKey, maxBit, padding) {
 * @returns {[*]}
 * */
 exports.sign = function(plain){
-    signer.update(data);
+    signer.update(plain);
     return signer.sign(clientPrivate,'hex');
 }
 
