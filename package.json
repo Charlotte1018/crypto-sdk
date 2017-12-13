@@ -16,8 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "encoding": "^0.1.12",
-    "ursa": "^0.9.4",
     "underscore": "1.4.x",
-    "underscore.string": "2.3.x"
+    "underscore.string": "2.3.x",
+    "ursa": "^0.9.4"
   }
 }

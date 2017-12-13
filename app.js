@@ -12,6 +12,7 @@
 // let verify=sign_verify.verify(plain,sign);
 
 let sdk=require('./src/sdk/sdk');
+// let base=require('./src/base64/base64');
 // let PKI=require('./PKI/PKI');
 // PKI.PKI();
 let plain='LOVE';
@@ -27,6 +28,9 @@ let verify=sdk.verify(plain,sign);
 console.log('********************');
 console.log('---私钥加密公钥解密---');
 console.log('加密结果--',encrypts);
+let signbase64 = new Buffer(encrypts);
+let signBase64=signbase64.toString('base64');
+console.log('加密结果BASE64--',signBase64);
 console.log('解密结果--',decrypts);
 console.log('********************');
 console.log('---公钥加密私钥解密---');
@@ -52,4 +56,8 @@ sdk.csrgen(domain, {
 	console.log('CSR created!')
 	console.log('key: ' + keys.private);
 	console.log('csr: ' + keys.csr);
+
+	let csrbase64 = new Buffer(encrypts);
+	let csrBase64=csrbase64.toString('base64');
+	console.log('P10文件BASE64--',csrBase64);
 });
