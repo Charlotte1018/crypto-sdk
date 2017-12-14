@@ -4,7 +4,7 @@
 let fs = require('fs');
 let ursa = require('ursa');
 
-const modulusBit = 1024;
+const modulusBit = 2048;
 var key = ursa.generatePrivateKey(modulusBit, 65537);
 let client = generation(key);
 

@@ -12,7 +12,7 @@ let client = {
 
 let clientPrivate = client.pem;
 let clientPublic = client.pub;
-var clientModulusBit = 1024;
+var clientModulusBit = 2048;
 var clientMaxBit = clientModulusBit / 8;
 var clientRealBit = clientMaxBit - 11;
 var padding = ursa.RSA_PKCS10_PADDING;
