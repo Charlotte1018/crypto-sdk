@@ -10,7 +10,9 @@
     "sign": "node ./src/crypto/sign.js",
     "csrgen": "node ./src/csrgen/csrgen.js",
     "csr": "openssl req -new -key client_private.key -out certrequest.csr",
-    "cert": "openssl x509 -req -in certrequest.csr -signkey client_private.key -out certificate.pem"
+    "cert": "openssl x509 -req -in certrequest.csr -signkey client_private.key -out certificate.pem",
+    "hmac": "node ./src/hmac/hmac.js",
+    "api": "node ./src/api/api.js"
   },
   "author": "",
   "license": "ISC",

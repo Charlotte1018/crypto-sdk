@@ -11,6 +11,7 @@ let client = {
 
 
 let clientPrivate = client.pem;
+console.log(ursa.isPrivateKey(clientPrivate));
 let clientPublic = client.pub;
 var clientModulusBit = 2048;
 var clientMaxBit = clientModulusBit / 8;
